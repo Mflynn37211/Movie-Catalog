@@ -1,12 +1,20 @@
-<head>
-      <title>ACTOR INDEX</title>
-<link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<!DOCTYPE html>
 
-      <h1> ACTORS </h1>
+<html lang="en">
 
+  <head>
+    <mets charset="utf-*">
+      <title> Actors Info </title>
+   <link rel="stylesheet" href="styles.css">
+   </head>
 
+   <body>
+  <h1> <%= @actor[0]["name"]%>   </h1>
+  <ul>
+    <% @actor.each do |act| %>
+      <li> Movies: <%=act["title"]%> Role: <%=act["character"]%>  </li>
+    <%end%>
+  </ul>
+</body>
 
-
-    </body>
+</html>

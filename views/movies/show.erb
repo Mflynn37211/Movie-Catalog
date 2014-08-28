@@ -1,12 +1,46 @@
-<head>
-      <title>ACTOR INDEX</title>
-<link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
 
-      <h1> MOVIES LIST </h1>
+`  <head>
+    <mets charset="utf-*">
+      <title> Movies Information </title>
+   <link rel="stylesheet" href="styles.css">
+   </head>
+
+  <body>
+    <h1><%=  @movie[0]["title"] %></h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Rating</th>
+          <th>Genre</th>
+          <th>Studio</th>
+          <th>Synopsis</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= @movie[0]["year"]%></td>
+          <td><%=  @movie[0]["rating"] %></td>
+          <td><%= @movie[0]["genre"]%></td>
+          <td><%= @movie[0]["studio"]%></td>
+          <td><%= @movie[0]["synopsis"]%></td>
+        </tr>
+      </tbody>
+    </table>
 
 
 
-
-    </body>
+    <ul>
+      <% @movie.each do |row| %>
+        <p>
+          Actor : <a href='/actors/<%= row["id"]%>'><%= row["actors"]%></a>
+          ----------   Character : <%= row["character"]%>
+        </p>
+      <%end%>
+    </ul>
+  </body>`
+</html>
